@@ -13,9 +13,9 @@
  * Time: O(n1 + n2 + n3)   Space: O(n1 + n2 + n3) for the result
  */
 export function merge(
-  collection_1: number[],
-  collection_2: number[],
-  collection_3: number[],
+  collection_1: readonly number[],
+  collection_2: readonly number[],
+  collection_3: readonly number[],
 ): number[] {
   const result: number[] = new Array(
     collection_1.length + collection_2.length + collection_3.length,
@@ -31,9 +31,15 @@ export function merge(
     const b = j >= 0 ? collection_2[j] : Infinity;
     const c = k < collection_3.length ? collection_3[k] : Infinity;
 
-    if (a <= b && a <= c) {
-      result[out++] = a;
-      i++;
+    // Exactly two comparisons pick the smallest of a, b, c.
+    if (a <= b) {
+      if (a <= c) {
+        result[out++] = a;
+        i++;
+      } else {
+        result[out++] = c;
+        k++;
+      }
     } else if (b <= c) {
       result[out++] = b;
       j--;

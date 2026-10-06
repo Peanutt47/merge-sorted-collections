@@ -87,9 +87,9 @@ The tests cover:
 - each collection empty or used alone, including reversing the descending `collection_2`
 - duplicates within and across collections
 - non-overlapping ranges, lengths that differ widely, and single-element collections
-- the inputs are not mutated
+- the inputs are not mutated, and a new array is returned
 - no built-in sort is called
-- randomized property tests (50 rounds) against a reference result
+- seeded (reproducible) random tests, 50 rounds, against a reference result
 
 > Note: TypeScript is pinned to `^5` because `ts-jest` needs the JavaScript compiler API,
 > which TypeScript 7 (the native compiler) no longer exposes.
