@@ -1,0 +1,22 @@
+{
+  "name": "merge-sorted-collections",
+  "version": "1.0.0",
+  "description": "Merge three pre-sorted integer collections into one ascending array without using any sort function",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "npm run build && node dist/main.js",
+    "dev": "ts-node src/main.ts",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.4",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
